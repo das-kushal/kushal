@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 26, 26, 26;
+    --background-end-rgb: 38, 38, 38;
+}
+
+:root:not(.dark) {
+    --foreground-rgb: 30, 30, 30;
+    --background-start-rgb: 250, 250, 250;
+    --background-end-rgb: 240, 240, 240;
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom right,
+            transparent,
+            rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+:root:not(.dark) ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+}
+
+.dark::-webkit-scrollbar-thumb {
+    background: #404040;
+}
+
+:root:not(.dark) ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #525252;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #525252;
+}
+
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* Light mode text color fixes */
+:root:not(.dark) h1,
+:root:not(.dark) h2,
+:root:not(.dark) h3,
+:root:not(.dark) h4,
+:root:not(.dark) h5,
+:root:not(.dark) h6 {
+    color: #1a1a1a;
+}
+
+:root:not(.dark) p {
+    color: #404040;
+}
+
+/* Light mode card backgrounds */
+:root:not(.dark) section>div>div[class*="bg-white/5"],
+:root:not(.dark) section div[class*="bg-white/5"] {
+    background: white !important;
+    border-color: #e5e5e5 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+:root:not(.dark) section div[class*="bg-white/5"]:hover {
+    background: #f9f9f9 !important;
+}
+
+/* Light mode text overrides */
+:root:not(.dark) div[class*="text-white"] span,
+:root:not(.dark) div[class*="text-white"] div,
+:root:not(.dark) span[class*="text-white"],
+:root:not(.dark) h1[class*="text-white"],
+:root:not(.dark) h2[class*="text-white"],
+:root:not(.dark) h3[class*="text-white"] {
+    color: #1a1a1a !important;
+}
+
+:root:not(.dark) span[class*="text-gray-300"],
+:root:not(.dark) span[class*="text-gray-400"],
+:root:not(.dark) div[class*="text-gray-300"],
+:root:not(.dark) div[class*="text-gray-400"] {
+    color: #666 !important;
+}
+
+/* Light mode borders */
+:root:not(.dark) div[class*="border-white/10"] {
+    border-color: #e5e5e5 !important;
+}
+
+/* Selection colors */
+::selection {
+    background-color: rgba(239, 68, 68, 0.3);
+    /* Red for dark mode */
+    color: inherit;
+}
+
+:root:not(.dark) ::selection {
+    background-color: rgba(234, 179, 8, 0.4);
+    /* Yellow for light mode */
+    color: inherit;
+}
