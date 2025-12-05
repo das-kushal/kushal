@@ -39,7 +39,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="grid gap-9">
+            <div className="grid gap-8">
               {contactInfo.map((item,index) => (
                 <motion.a
                   key={index}

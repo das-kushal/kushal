@@ -67,10 +67,10 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 transition-all duration-300 ${scrolled ? "pt-3" : "pt-8"
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-2 md:pt-4 px-4 transition-all duration-300 ${scrolled ? "pt-2 md:pt-3" : "pt-4 md:pt-8"
           }`}
       >
-        <div className="relative bg-white/60 dark:bg-dark-card/40 backdrop-blur-xl border border-gray-200/50 dark:border-white/10 rounded-full px-6 py-3 shadow-lg flex items-center gap-8 hover:bg-white/80 dark:hover:bg-dark-card/60 transition-all">
+        <div className="relative bg-white/60 dark:bg-dark-card/40 backdrop-blur-xl border border-gray-200/50 dark:border-white/10 rounded-full px-4 py-2 md:px-6 md:py-3 shadow-lg flex items-center gap-4 md:gap-8 hover:bg-white/80 dark:hover:bg-dark-card/60 transition-all">
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
@@ -103,9 +103,9 @@ export default function Navbar() {
             {/* Mobile Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white"
+              className="md:hidden p-1 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              {isOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>

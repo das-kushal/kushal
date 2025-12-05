@@ -12,9 +12,9 @@ export default function Skills() {
   },{});
 
   const typeConfig = {
-    language: { title: "Languages",color: "from-blue-400 to-cyan-400" },
-    framework: { title: "Frameworks & Libraries",color: "from-purple-400 to-pink-400" },
-    database: { title: "Tools & Databases",color: "from-orange-400 to-red-400" },
+    language: { title: "Languages",color: "from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400" },
+    framework: { title: "Frameworks & Libraries",color: "from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400" },
+    database: { title: "Tools & Databases",color: "from-orange-600 to-red-600 dark:from-orange-400 dark:to-red-400" },
   };
 
   const categoryOrder = ["language","framework","database"];
@@ -46,7 +46,7 @@ export default function Skills() {
                 viewport={{ once: true }}
                 transition={{ delay: categoryIndex * 0.1 }}
               >
-                <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r ${typeConfig[type].color} bg-clip-text text-transparent inline-block`}>
+                <h3 className={`text-2xl font-bold mb-8 bg-gradient-to-r ${typeConfig[type].color} bg-clip-text text-transparent !text-transparent inline-block`}>
                   {typeConfig[type].title}
                 </h3>
 

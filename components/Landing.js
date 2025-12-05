@@ -98,13 +98,14 @@ export default function Landing() {
           transition={{ duration: 0.8 }}
           className="relative flex justify-center"
         >
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
-            {/* Decorative circles */}
-            <div className="absolute inset-0 rounded-full border border-white/10 animate-[spin_10s_linear_infinite]" />
-            <div className="absolute inset-4 rounded-full border border-white/10 animate-[spin_15s_linear_infinite_reverse]" />
+          <div className="relative w-72 h-72 md:w-96 md:h-96 aspect-square flex-shrink-0">
+            {/* Decorative circles - Ripple Effect */}
+            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/10 animate-ripple" />
+            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/10 animate-ripple" style={{ animationDelay: "1s" }} />
+            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/10 animate-ripple" style={{ animationDelay: "2s" }} />
 
             {/* Main Image Container */}
-            <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-white/5 shadow-2xl">
+            <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-gray-100 dark:border-white/5 shadow-2xl">
               <Image
                 src={myImg}
                 alt="Kushal Das"

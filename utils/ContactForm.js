@@ -25,7 +25,7 @@ export default function ContactForm() {
       initial={{ opacity: 0,x: 20 }}
       whileInView={{ opacity: 1,x: 0 }}
       viewport={{ once: true }}
-      className="bg-white dark:bg-dark-card p-8 rounded-3xl border border-gray-200 dark:border-white/10 shadow-xl"
+      className="bg-white dark:bg-dark-card p-4 md:p-6 rounded-3xl border border-gray-200 dark:border-white/10 shadow-md"
     >
       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
 
