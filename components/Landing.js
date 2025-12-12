@@ -100,9 +100,9 @@ export default function Landing() {
         >
           <div className="relative w-72 h-72 md:w-96 md:h-96 aspect-square flex-shrink-0">
             {/* Decorative circles - Ripple Effect */}
-            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/10 animate-ripple" />
-            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/10 animate-ripple" style={{ animationDelay: "1s" }} />
-            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/10 animate-ripple" style={{ animationDelay: "2s" }} />
+            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/20 animate-ripple" />
+            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/20 animate-ripple" style={{ animationDelay: "1s" }} />
+            <div className="absolute inset-0 rounded-full border border-gray-200 dark:border-white/20 animate-ripple" style={{ animationDelay: "2s" }} />
 
             {/* Main Image Container */}
             <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-gray-100 dark:border-white/5 shadow-2xl">
