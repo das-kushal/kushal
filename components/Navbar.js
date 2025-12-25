@@ -2,13 +2,18 @@
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import { motion,AnimatePresence } from "framer-motion";
-import { Menu,X } from "lucide-react";
+import { Menu,X,ExternalLink } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen,setIsOpen] = useState(false);
   const [activeSection,setActiveSection] = useState("top");
   const [scrolled,setScrolled] = useState(false);
+  const [isHomePage,setIsHomePage] = useState(true);
+
+  useEffect(() => {
+    setIsHomePage(window.location.pathname === "/");
+  },[]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +55,7 @@ export default function Navbar() {
     handleScroll(); // Call once on mount
     window.addEventListener("scroll",handleScroll);
     return () => window.removeEventListener("scroll",handleScroll);
-  },[]);
+  },[isHomePage]);
 
   const navItems = [
     { href: "#top",label: "Home" },
@@ -60,6 +65,7 @@ export default function Navbar() {
     { href: "#certifications",label: "Certifications" },
     { href: "#projects",label: "Projects" },
     { href: "#contact",label: "Contact" },
+    { href: "/interviews",label: "Interview Experiences",isExternal: true },
   ];
 
   return (
@@ -78,9 +84,12 @@ export default function Navbar() {
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setActiveSection(item.href.substring(1))}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${isActive ? "text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
+                  onClick={() => {
+                    if (!item.isExternal) setActiveSection(item.href.substring(1));
+                  }}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${isActive ? "text-gray-900 dark:text-white" :
+                    item.isExternal ? "text-primary-600 dark:text-primary-400 hover:opacity-80" : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                     }`}
                 >
                   {isActive && (
@@ -91,6 +100,7 @@ export default function Navbar() {
                     />
                   )}
                   {item.label}
+                  {item.isExternal && <ExternalLink size={12} className="opacity-70" />}
                 </Link>
               );
             })}
@@ -120,15 +130,16 @@ export default function Navbar() {
             exit={{ opacity: 0,scale: 0.95,y: -20 }}
             className="fixed inset-x-4 top-24 z-40 md:hidden"
           >
-            <div className="bg-white/90 dark:bg-dark-card/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2">
+            <div className="bg-white/90 dark:bg-dark-card/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl p-1 shadow-2xl flex flex-col gap-0.5">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
                   onClick={() => setIsOpen(false)}
-                  className="p-4 text-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-xl transition-colors"
+                  className={`p-2 text-sm text-center rounded-xl transition-colors flex items-center justify-center gap-2 ${item.isExternal ? "text-primary-600 dark:text-primary-400 font-semibold bg-primary-600/5 hover:bg-primary-600/10" : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5"}`}
                 >
                   {item.label}
+                  {item.isExternal && <ExternalLink size={14} />}
                 </Link>
               ))}
             </div>

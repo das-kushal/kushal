@@ -4,7 +4,6 @@ import { useForm,ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import { Send,CheckCircle,AlertCircle } from "lucide-react";
 import { ToastContainer,toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
   const [state,handleSubmit] = useForm("xqkvqkdo");
