@@ -2,7 +2,7 @@
 import { useState,useEffect } from "react";
 import Link from "next/link";
 import { motion,AnimatePresence } from "framer-motion";
-import { Menu,X,ExternalLink } from "lucide-react";
+import { Menu,X,ExternalLink,Trophy,BriefcaseBusiness } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
@@ -65,6 +65,7 @@ export default function Navbar() {
     { href: "#certifications",label: "Certifications" },
     { href: "#projects",label: "Projects" },
     { href: "#contact",label: "Contact" },
+    { href: "/achievements",label: "Achievements",isExternal: true },
     { href: "/interviews",label: "Interview Experiences",isExternal: true },
   ];
 
@@ -100,7 +101,8 @@ export default function Navbar() {
                     />
                   )}
                   {item.label}
-                  {item.isExternal && <ExternalLink size={12} className="opacity-70" />}
+                  {item.isExternal && (item.label === "Interview Experiences") && <BriefcaseBusiness size={14} className="opacity-70" />}
+                  {item.isExternal && (item.label === "Achievements") && <Trophy size={14} className="opacity-70" />}
                 </Link>
               );
             })}
@@ -139,7 +141,8 @@ export default function Navbar() {
                   className={`p-2 text-sm text-center rounded-xl transition-colors flex items-center justify-center gap-2 ${item.isExternal ? "text-primary-600 dark:text-primary-400 font-semibold bg-primary-600/5 hover:bg-primary-600/10" : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5"}`}
                 >
                   {item.label}
-                  {item.isExternal && <ExternalLink size={14} />}
+                  {item.isExternal && (item.label === "Interview Experiences") && <BriefcaseBusiness size={14} className="opacity-70" />}
+                  {item.isExternal && (item.label === "Achievements") && <Trophy size={14} className="opacity-70" />}
                 </Link>
               ))}
             </div>
