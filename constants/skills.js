@@ -155,7 +155,7 @@ const skillSet = [
   {
     id: 5,
     name: "Java",
-    imageUrl: "logos/java-original.svg",
+    imageUrl: "/logos/java-original.svg",
     type: "language",
   },
   {
