@@ -1,5 +1,3 @@
-
-
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -14,7 +12,7 @@ import { ChevronUp } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="bg-gray-50 dark:bg-dark-bg min-h-screen text-gray-900 dark:text-white selection:bg-primary-500/30">
+    <main className="min-h-screen bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-gray-100">
       <Navbar />
 
       <div className="flex flex-col">
@@ -50,9 +48,9 @@ export default function Home() {
 
         <Link
           href="#top"
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary-600/80 backdrop-blur-md border border-white/10 text-white shadow-lg hover:bg-primary-500 transition-all hover:scale-110 group"
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gradient-to-br from-primary-600 to-primary-500 text-white shadow-xl shadow-primary-600/30 hover:shadow-primary-500/50 hover:scale-110 transition-all duration-300 border border-primary-400/30 group"
         >
-          <ChevronUp size={24} className="group-hover:-translate-y-1 transition-transform" />
+          <ChevronUp size={22} className="group-hover:-translate-y-0.5 transition-transform" />
         </Link>
       </div>
     </main>

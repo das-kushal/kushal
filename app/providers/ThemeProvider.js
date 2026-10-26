@@ -9,16 +9,18 @@ export function ThemeProvider({ children }) {
 
     useEffect(() => {
         setMounted(true);
-        const savedTheme = localStorage.getItem("theme") || "dark";
+        const savedTheme = localStorage.getItem("theme") === "light" ? "light" : "dark";
         setTheme(savedTheme);
-        document.documentElement.classList.toggle("dark",savedTheme === "dark");
+        document.documentElement.classList.toggle("dark", savedTheme === "dark");
+        document.documentElement.classList.toggle("light", savedTheme === "light");
     },[]);
 
     const toggleTheme = () => {
         const newTheme = theme === "dark" ? "light" : "dark";
         setTheme(newTheme);
         localStorage.setItem("theme",newTheme);
-        document.documentElement.classList.toggle("dark",newTheme === "dark");
+        document.documentElement.classList.toggle("dark", newTheme === "dark");
+        document.documentElement.classList.toggle("light", newTheme === "light");
     };
 
     return (
