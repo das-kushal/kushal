@@ -74,7 +74,7 @@ export default function Navbar() {
                     } px-4`}
             >
                 <div
-                    className="theme-nav relative flex items-center gap-2 md:gap-1 px-3 py-2 md:px-5 md:py-2.5 rounded-full shadow-2xl transition-all duration-300"
+                    className="theme-nav relative flex items-center gap-2 md:gap-1 px-3 py-2 md:px-5 md:py-2.5 rounded-full transition-all duration-300"
                 >
                     {/* Gradient top line */}
                     <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent rounded-full" />
@@ -90,15 +90,15 @@ export default function Navbar() {
                                     onClick={() => {
                                         if (!item.isExternal) setActiveSection(item.href.substring(1));
                                     }}
-                                    className={`relative px-3.5 py-2 text-xs font-medium transition-all duration-300 flex items-center gap-1.5 rounded-full ${isActive
+                                    className={`nav-hover-highlight relative px-3.5 py-2 text-xs font-medium transition-all duration-300 flex items-center gap-1.5 rounded-full ${isActive
                                             ? "text-white"
-                                            : "text-gray-400 hover:text-gray-200"
+                                            : "text-gray-400"
                                         }`}
                                 >
                                     {isActive && (
                                         <motion.div
                                             layoutId="active-pill"
-                                            className="absolute inset-0 bg-white/10 rounded-full -z-10"
+                                            className="nav-active-indicator absolute inset-0 rounded-full"
                                             transition={{ type: "spring", duration: 0.5 }}
                                         />
                                     )}
@@ -118,7 +118,7 @@ export default function Navbar() {
                                     href={href}
                                     title={label}
                                     aria-label={label}
-                                    className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs font-semibold text-primary-400 transition-colors hover:bg-primary-400/10 hover:text-primary-300"
+                                    className="nav-hover-highlight flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs font-semibold text-primary-400 transition-colors"
                                 >
                                     <Icon size={13} aria-hidden="true" />
                                     <span className="lg:hidden">{shortLabel}</span>
@@ -131,7 +131,7 @@ export default function Navbar() {
                             onClick={() => setIsOpen(!isOpen)}
                             aria-label={isOpen ? "Close menu" : "Open menu"}
                             aria-expanded={isOpen}
-                            className="lg:hidden p-1.5 text-gray-400 hover:text-gray-200 transition-colors"
+                            className="nav-hover-highlight lg:hidden rounded-full p-1.5 text-gray-400 transition-colors"
                         >
                             {isOpen ? <X size={18} /> : <Menu size={18} />}
                         </button>
@@ -149,13 +149,13 @@ export default function Navbar() {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="fixed inset-x-4 top-20 z-40 lg:hidden"
                     >
-                        <div className="theme-nav-menu rounded-2xl p-2 flex flex-col gap-1 shadow-2xl">
+                        <div className="theme-nav-menu rounded-2xl p-2 flex flex-col gap-1">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.href}
                                     href={isHomePage ? item.href : `/${item.href}`}
                                     onClick={() => setIsOpen(false)}
-                                    className="theme-nav-link p-3 text-sm text-center rounded-xl transition-all flex items-center justify-center gap-2 font-medium text-gray-300 hover:text-white hover:bg-white/5"
+                                    className="theme-nav-link nav-hover-highlight p-3 text-sm text-center rounded-full transition-all flex items-center justify-center gap-2 font-medium text-gray-300"
                                 >
                                     {item.label}
                                 </Link>

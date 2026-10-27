@@ -33,21 +33,17 @@ export default function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="relative group flex flex-col rounded-2xl border border-white/8 bg-white/3 overflow-hidden hover:border-white/18 transition-all duration-400"
+              className="certification-card relative group flex flex-col rounded-2xl border border-white/8 bg-white/3 overflow-hidden transition-colors duration-300"
             >
-              {/* Top glow accent */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
               {/* Image area */}
-              <div className="relative h-44 bg-dark-card/60 dark:bg-dark-card/60 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+              <div className="certification-image relative h-44 bg-dark-card/60 dark:bg-dark-card/60 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative w-full h-full">
                   <Image
                     src={cert.imageUrl}
                     alt={cert.name}
                     fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain"
                   />
                 </div>
               </div>
@@ -56,7 +52,7 @@ export default function Certifications() {
               <div className="p-5 flex flex-col flex-1">
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white dark:text-white text-gray-900 mb-1 group-hover:text-primary-400 transition-colors leading-tight">
+                    <h3 className="certification-title text-base font-bold text-white dark:text-white text-gray-900 mb-1 transition-colors leading-tight">
                       {cert.name}
                     </h3>
                     <p className="text-xs text-gray-500 font-medium">{cert.issuer}</p>
@@ -66,7 +62,7 @@ export default function Certifications() {
                       href={cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-shrink-0 p-2 rounded-lg bg-white/5 hover:bg-primary-500/15 hover:text-primary-400 text-gray-500 transition-all"
+                      className="flex-shrink-0 p-2 rounded-lg bg-white/5 hover:bg-primary-500/15 hover:text-primary-400 text-gray-500 transition-colors"
                     >
                       <ExternalLink size={14} />
                     </a>

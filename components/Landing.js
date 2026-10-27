@@ -86,19 +86,19 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
               href="#contact"
-              className="group relative px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/40 hover:scale-[1.03]"
+              className="group relative px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2"
             >
               Contact Me
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} />
             </Link>
 
             <Link
               href="/resume/Kushal-Das-Resume.pdf"
               target="_blank"
-              className="group px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 text-white dark:text-white rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm hover:scale-[1.03]"
+              className="group px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/25 text-white dark:text-white rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
             >
               Download Resume
-              <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
+              <Download size={18} />
             </Link>
           </div>
 
@@ -112,8 +112,6 @@ export default function Landing() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + index * 0.08 }}
-                whileHover={{ scale: 1.15, y: -2 }}
-                whileTap={{ scale: 0.95 }}
                 className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-primary-400 hover:bg-primary-500/10 hover:border-primary-500/30 transition-all duration-200"
                 aria-label={social.label}
               >
@@ -146,7 +144,7 @@ export default function Landing() {
                 src={myImg}
                 alt="Kushal Das"
                 fill
-                className="object-cover hover:scale-110 transition-transform duration-700"
+                className="object-cover"
                 priority
               />
             </div>
@@ -156,7 +154,7 @@ export default function Landing() {
               initial={{ opacity: 0, x: 20, y: -20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="absolute -top-2 -right-4 md:top-4 md:-right-8 px-3 py-1.5 rounded-xl bg-dark-card/90 dark:bg-dark-card/90 border border-white/10 backdrop-blur-md text-xs font-semibold text-primary-400 shadow-xl whitespace-nowrap"
+              className="absolute -top-2 -right-4 md:top-4 md:-right-8 px-3 py-1.5 rounded-xl bg-dark-card/90 dark:bg-dark-card/90 border border-white/10 backdrop-blur-md text-xs font-semibold text-primary-400 whitespace-nowrap"
             >
               <Building2 size={14} /> Wells Fargo
             </motion.div>
@@ -165,7 +163,7 @@ export default function Landing() {
               initial={{ opacity: 0, x: -20, y: 20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ delay: 1 }}
-              className="absolute -bottom-2 -left-4 md:bottom-4 md:-left-8 px-3 py-1.5 rounded-xl bg-dark-card/90 dark:bg-dark-card/90 border border-white/10 backdrop-blur-md text-xs font-semibold text-purple-400 shadow-xl whitespace-nowrap"
+              className="absolute -bottom-2 -left-4 md:bottom-4 md:-left-8 px-3 py-1.5 rounded-xl bg-dark-card/90 dark:bg-dark-card/90 border border-white/10 backdrop-blur-md text-xs font-semibold text-purple-400 whitespace-nowrap"
             >
               <Code2 size={14} /> Full Stack Dev
             </motion.div>

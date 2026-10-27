@@ -62,16 +62,14 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -6, scale: 1.03 }}
                   className="p-6 rounded-2xl bg-white/3 dark:bg-white/3 border border-white/8 hover:border-white/15 transition-all duration-300 text-center group relative overflow-hidden"
-                  style={{ boxShadow: `0 0 24px -8px ${stat.glow}` }}
                 >
                   <div
                     className="absolute inset-0 z-0 opacity-100 rounded-2xl pointer-events-none"
                     style={{ background: `radial-gradient(circle at 50% 0%, ${stat.glow} 0%, transparent 70%)` }}
                   />
 
-                  <div className={`relative z-10 w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`relative z-10 w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center`}>
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="relative z-10 text-2xl font-bold text-gray-900 dark:text-white mb-1 leading-tight">{stat.value}</div>

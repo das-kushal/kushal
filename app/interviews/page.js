@@ -15,9 +15,9 @@ export default function InterviewExperiencePage() {
                 >
                     <Link
                         href="/"
-                        className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-400 transition-colors group px-4 py-2 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-sm"
+                        className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-400 transition-colors group px-4 py-2 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10"
                     >
-                        <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                        <ArrowLeft size={18} />
                         <span className="font-medium">Back to Portfolio</span>
                     </Link>
                 </motion.div>
@@ -73,7 +73,7 @@ export default function InterviewExperiencePage() {
                             <div className="">
                                 {exp.rounds.map((round,rIdx) => (
                                     <div key={rIdx} className="relative pl-8 border-l-2 border-primary-400/20 pb-12 last:pb-0">
-                                        <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary-400 border-4 border-white dark:border-dark-bg shadow-sm" />
+                                        <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary-400 border-4 border-white dark:border-dark-bg" />
 
                                         <div className="mb-8">
                                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
@@ -100,7 +100,7 @@ export default function InterviewExperiencePage() {
                                                     className="p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/10 transition-all group"
                                                 >
                                                     <div className="flex items-start gap-4">
-                                                        <div className="mt-1 p-2 rounded-xl bg-primary-400/10 text-primary-400 group-hover:scale-110 transition-transform">
+                                                        <div className="mt-1 p-2 rounded-xl bg-primary-400/10 text-primary-400">
                                                             {getIconForType(q.type)}
                                                         </div>
                                                         <div>

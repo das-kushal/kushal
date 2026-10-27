@@ -76,13 +76,13 @@ export default function WorkExperience() {
         viewport={{ once: true }}
         transition={{ delay: index * 0.1 }}
       >
-        <div className="rounded-2xl border border-white/8 bg-white/3 overflow-hidden hover:border-white/15 transition-all duration-300 group">
+        <div className="experience-card rounded-2xl border border-white/8 bg-white/3 overflow-hidden transition-colors duration-300 group">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="w-full p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left"
           >
             <div className="flex items-center gap-4">
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-white flex-shrink-0 shadow-lg">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-white flex-shrink-0">
                 <Image
                   src={latestRole.logoUrl}
                   alt={place}
@@ -91,7 +91,7 @@ export default function WorkExperience() {
                 />
               </div>
               <div>
-                <h3 className={`text-xl font-bold text-gray-100 group-hover:${cv.accent} transition-colors`}>{place}</h3>
+                <h3 className="experience-place-title text-xl font-bold text-gray-100 transition-colors">{place}</h3>
                 <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mt-1">
                   <MapPin size={11} />
                   {latestRole.location}
@@ -169,7 +169,7 @@ export default function WorkExperience() {
     return (
       <div className="flex-1">
         <div className="flex items-center gap-3 mb-8">
-          <div className={`p-2.5 rounded-xl bg-gradient-to-br ${cv.gradient} shadow-lg`}>
+          <div className={`p-2.5 rounded-xl bg-gradient-to-br ${cv.gradient}`}>
             <Icon size={20} className="text-white" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{title}</h2>
