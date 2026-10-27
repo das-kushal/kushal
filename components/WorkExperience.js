@@ -64,7 +64,7 @@ export default function WorkExperience() {
   };
 
   const ExperienceCard = ({ place, roles, color, index }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const latestRole = roles[0];
     const dateRange = calculateDateRange(roles);
     const cv = colorVariants[color];
