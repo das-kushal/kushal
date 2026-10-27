@@ -17,11 +17,11 @@ export default function AchievementsPage() {
         >
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-gray-600 shadow-sm transition-colors hover:text-primary-400 dark:border-white/10 dark:bg-white/5 dark:text-gray-400"
+            className="group inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-gray-600 transition-colors hover:text-primary-400 dark:border-white/10 dark:bg-white/5 dark:text-gray-400"
           >
             <ArrowLeft
               size={18}
-              className="transition-transform group-hover:-translate-x-1"
+              className="transition-colors"
             />
             <span className="font-medium">Back to Portfolio</span>
           </Link>

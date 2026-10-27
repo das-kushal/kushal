@@ -25,14 +25,14 @@ export default function CertificationCard({
     const issuerImage = issuerName == 'udemy' ? <SiUdemy className="text-gray-400 text-sm" /> : issuerName == 'meta' ? <FaMeta className="text-gray-400 text-sm" /> : issuerName == 'google' ? <FaGoogle className="text-gray-400 text-sm" /> : issuerName == 'linkedin' ? <FaLinkedin className="text-gray-400 text-sm" /> : <SiCoursera className="text-gray-400 text-sm" />
     return (
         <>
-            <div className="group bg-gray-900 rounded-xl text-wrap overflow-hidden  border border-gray-700 hover:border-red-500 shadow-2xl cursor-pointer">
+            <div className="group bg-gray-900 rounded-xl text-wrap overflow-hidden  border border-gray-700 hover:border-red-500 cursor-pointer">
                 {/* Certificate Image */}
                 <div className="relative h-48 overflow-hidden" onClick={openModal}>
                     <Image
                         src={imageUrl}
                         alt={name}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="object-cover"
                     />
                     {/* <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" /> */}
                 </div>

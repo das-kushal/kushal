@@ -10,9 +10,9 @@
 //   return (
 //     <>
 //       <div
-//         // className="bg-gray-900 border-2 border-gray-700 rounded-lg p-4  h-[100%]   hover:border-red-500 cursor-pointer shadow-2xl"
+//         // className="bg-gray-900 border-2 border-gray-700 rounded-lg p-4  h-[100%]   hover:border-red-500 cursor-pointer"
 
-//         className="group relative bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer shadow-xl h-[100%] mb-2 flex flex-col justify-between "
+//         className="group relative bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer h-[100%] mb-2 flex flex-col justify-between "
 //       >
 //         <div>
 //           <h3 className={`${iconColor} text-lg font-bold mb-2 `}>{title}</h3>
@@ -44,7 +44,7 @@
 //   // const iconStyle = icon === "work" ? "💼" : "";
 //   return (
 //     <ol className="relative border-l border-gray-200 dark:border-gray-700">
-//       <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer shadow-xl h-[100%] mb-2 flex flex-col justify-between  ml-6">
+//       <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer h-[100%] mb-2 flex flex-col justify-between  ml-6">
 //         <span className="absolute flex items-center justify-center w-4 h-4  rounded-full -left-2   ring-white dark:ring-gray-900 bg-[#ec0000d0]"></span>
 //         <h3
 //           className={`flex items-center mb-1 text-lg font-semibold ${iconColor}`}
@@ -80,7 +80,7 @@
 
 //   return (
 //     <ol className="relative border-l border-gray-200 dark:border-gray-700">
-//       <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer shadow-xl h-[100%] mb-2 flex flex-col justify-between ml-6">
+//       <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer h-[100%] mb-2 flex flex-col justify-between ml-6">
 //         <span className="absolute flex items-center justify-center w-4 h-4 rounded-full -left-2 ring-white dark:ring-gray-900 bg-[#ec0000d0]"></span>
 
 //         <div className="flex items-start gap-4">
@@ -150,7 +150,7 @@
 //       </div>
 
 //       {/* Content Card */}
-//       <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer shadow-xl flex-1 transition-all duration-300">
+//       <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 hover:border-red-500 cursor-pointer flex-1 transition-all duration-300">
 //         <div className="flex items-start gap-4">
 //           {/* Organization Logo */}
 //           <div className="flex-shrink-0 w-16 h-16 bg-transparent rounded-lg p-2 flex items-center justify-center">
@@ -206,7 +206,7 @@ export default function WorkExperienceCard({
         <div className="w-2 h-2 bg-white rounded-full"></div>
       </span>
 
-      <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 hover:border-red-500 cursor-pointer shadow-xl transition-all duration-300">
+      <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 hover:border-red-500 cursor-pointer transition-all duration-300">
         <div className="flex items-start gap-4">
           {/* Organization Logo */}
           <div className="flex-shrink-0 w-16 h-16 bg-transparent rounded-lg p-2 flex items-center justify-center">

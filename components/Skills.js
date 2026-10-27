@@ -68,7 +68,6 @@ export default function Skills() {
                   {skills.map((skill, index) => (
                     <motion.div
                       key={skill.id ?? index}
-                      whileHover={{ scale: 1.05, y: -5 }}
                       className="bg-white/5 border border-white/10 rounded-xl p-4 flex flex-col items-center gap-3 hover:bg-white/10 transition-colors group"
                     >
                       <div className="relative w-12 h-12 grayscale group-hover:grayscale-0 transition-all duration-300">

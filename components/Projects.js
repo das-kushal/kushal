@@ -11,12 +11,11 @@ const ProjectCard = ({ project }) => {
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.4 }}
-      className="group relative rounded-2xl border border-white/8 bg-white/3 overflow-hidden hover:border-white/18 transition-all duration-400 flex flex-col md:flex-row hover:shadow-2xl"
+      exit={{ opacity: 0, y: 0 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
+      className="group relative rounded-2xl border border-white/8 bg-white/3 overflow-hidden hover:border-white/18 transition-all duration-400 flex flex-col md:flex-row"
     >
       {/* Top glow on hover */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
@@ -27,12 +26,12 @@ const ProjectCard = ({ project }) => {
           src={project.imgUrl}
           alt={project.name}
           fill
-          className="object-cover transition-transform duration-600 group-hover:scale-110"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-dark-bg/30" />
         {/* Category badge */}
         <div className="absolute top-3 left-3">
-          <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-gray-300">
+          <span className="project-category-badge text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full backdrop-blur-md border border-white/15">
             {project.type === "finalYear" ? "Final Year" : "Personal"}
           </span>
         </div>
@@ -154,33 +153,27 @@ export default function Projects() {
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
-                className={`relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
+                className={`project-filter-button relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden ${
                   filter === tab
-                    ? "text-white shadow-lg shadow-primary-600/20"
+                    ? "border border-primary-400/30 bg-white/10 text-primary-400"
                     : "text-gray-400 border border-white/10 hover:border-white/20 hover:text-gray-200"
                 }`}
               >
-                {filter === tab && (
-                  <motion.div
-                    layoutId="filter-pill"
-                    className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-500"
-                  />
-                )}
-                <span className="relative z-10">
-                  {tab === "personal" ? "Personal Projects" : "Final Year Project"}
+                <span>
+                    {tab === "personal" ? "Personal Projects" : "Final Year Project"}
                 </span>
               </button>
             ))}
           </div>
         </motion.div>
 
-        <motion.div layout className="flex flex-col gap-6">
-          <AnimatePresence mode="popLayout">
+        <div className="flex flex-col gap-6">
+          <AnimatePresence mode="wait">
             {filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

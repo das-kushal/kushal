@@ -52,15 +52,14 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                whileHover={item.href ? { x: 6, scale: 1.01 } : {}}
-                className={`flex flex-1 items-center gap-4 p-4 rounded-2xl border border-white/8 bg-white/3 hover:border-white/18 transition-all duration-300 group ${!item.href && "cursor-default"}`}
+                className={`contact-info-card flex flex-1 items-center gap-4 p-4 rounded-2xl border border-white/8 bg-white/3 transition-colors duration-300 group ${!item.href && "cursor-default"}`}
               >
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center flex-shrink-0`}>
                   <item.icon size={20} className="text-white" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs text-gray-600 dark:text-gray-500 uppercase tracking-widest font-semibold mb-0.5">{item.label}</div>
-                  <div className="text-sm font-medium text-gray-200 dark:text-gray-200 text-gray-800 truncate">{item.value}</div>
+                  <div className="contact-info-label text-xs text-gray-600 dark:text-gray-500 uppercase tracking-widest font-semibold mb-0.5">{item.label}</div>
+                  <div className="contact-info-value text-sm font-medium text-gray-200 dark:text-gray-200 text-gray-800 truncate">{item.value}</div>
                 </div>
               </motion.a>
             ))}

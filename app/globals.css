@@ -89,11 +89,6 @@ html {
     border: 1px solid rgba(0,0,0,0.07);
 }
 
-/* Glow utilities */
-.glow-red    { box-shadow: 0 0 30px -5px rgba(220, 38, 38, 0.4); }
-.glow-purple { box-shadow: 0 0 30px -5px rgba(139, 92, 246, 0.4); }
-.glow-text   { text-shadow: 0 0 40px rgba(220, 38, 38, 0.5); }
-
 /* Section divider */
 .section-divider {
     width: 60px;
@@ -109,7 +104,6 @@ html {
 :root.light section div[class*="bg-white/3"] {
     background: rgba(255,255,255,0.8) !important;
     border-color: rgba(0,0,0,0.07) !important;
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
 }
 :root.light section div[class*="bg-white/5"]:hover,
 :root.light section div[class*="bg-white/3"]:hover {
@@ -150,7 +144,26 @@ html {
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.theme-nav .nav-hover-highlight:hover,
+.theme-nav-menu .nav-hover-highlight:hover {
+    background-color: var(--muted-surface);
+}
+
+.nav-active-indicator {
+    background-color: var(--muted-surface);
+    z-index: 0;
+}
+
+.theme-nav .nav-hover-highlight {
+    position: relative;
+    isolation: isolate;
+}
+
+.theme-nav .nav-hover-highlight > *,
+.theme-nav .nav-hover-highlight {
+    z-index: 1;
 }
 
 .theme-nav-menu {
@@ -170,6 +183,42 @@ html {
 
 .skills-category-card {
     background-color: var(--muted-surface);
+}
+
+.project-category-badge {
+    background-color: #000;
+    color: #fff !important;
+}
+
+.project-filter-button:hover {
+    background-color: var(--accent-surface) !important;
+    border-color: var(--site-accent) !important;
+    color: var(--site-accent) !important;
+}
+
+.contact-info-card:hover,
+.experience-card:hover {
+    background-color: var(--accent-surface) !important;
+    border-color: var(--site-accent) !important;
+}
+
+.contact-info-card:hover .contact-info-label,
+.contact-info-card:hover .contact-info-value,
+.experience-card:hover .experience-place-title {
+    color: var(--site-accent) !important;
+}
+
+.certification-card:hover .certification-image {
+    background-color: var(--accent-surface) !important;
+}
+
+:root.light section .experience-card:hover[class*="bg-white/3"] {
+    background-color: var(--accent-surface) !important;
+    border-color: var(--site-accent) !important;
+}
+
+:root.light .experience-card:hover .experience-place-title {
+    color: var(--site-accent) !important;
 }
 
 .skills-globe {
@@ -206,14 +255,6 @@ html {
     color: #e5e7eb;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    filter: drop-shadow(0 0 7px rgba(194, 162, 122, 0.24));
-    transition: filter 180ms ease;
-}
-
-.skill-globe-point:hover,
-.skill-globe-point:focus-visible,
-.skill-globe-point.is-selected {
-    filter: drop-shadow(0 0 10px rgba(194, 162, 122, 0.52));
 }
 
 .skill-globe-point:focus-visible {
@@ -273,18 +314,10 @@ html {
 
 :root.light .skill-globe-point {
     color: #1f2937;
-    filter: drop-shadow(0 0 7px rgba(120, 99, 70, 0.22));
 }
 
 :root.light .skill-globe-name {
     color: #29211d;
-    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
-}
-
-:root.light .skill-globe-point:hover,
-:root.light .skill-globe-point:focus-visible,
-:root.light .skill-globe-point.is-selected {
-    filter: drop-shadow(0 0 10px rgba(120, 99, 70, 0.4));
 }
 
 :root.light .skills-globe-caption {
@@ -298,7 +331,6 @@ html {
 :root.light .theme-nav {
     background: rgb(248, 247, 245);
     border-color: rgba(15,23,42,0.1);
-    box-shadow: 0 8px 32px rgba(15,23,42,0.12);
 }
 
 :root.light .theme-nav-menu {
@@ -494,26 +526,6 @@ main [class*="hover:bg-indigo-"]:hover {
 main [class*="blur-"]:not([class*="backdrop-blur-"]) {
     filter: grayscale(1) !important;
     opacity: 0.12 !important;
-}
-
-main [class*="shadow-primary-"],
-main [class*="shadow-purple-"],
-main [class*="shadow-blue-"],
-main [class*="shadow-orange-"],
-main [class*="shadow-red-"],
-main [class*="shadow-rose-"],
-main [class*="shadow-emerald-"] {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16) !important;
-}
-
-:root.light .skill-globe-point {
-    filter: drop-shadow(0 0 7px rgba(120, 99, 70, 0.22));
-}
-
-:root.light .skill-globe-point:hover,
-:root.light .skill-globe-point:focus-visible,
-:root.light .skill-globe-point.is-selected {
-    filter: drop-shadow(0 0 10px rgba(120, 99, 70, 0.4));
 }
 
 :root.light main [class*="bg-gradient-to-"]:not([class*="text-transparent"]) {

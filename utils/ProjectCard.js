@@ -33,7 +33,7 @@ export default function ProjectCard({
   return (
     <>
 
-      <div className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-red-500 mb-4 sm:m-2 shadow-lg flex flex-col sm:flex-row w-full">
+      <div className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-red-500 mb-4 sm:m-2 flex flex-col sm:flex-row w-full">
 
         {/* Project Image */}
         <div
@@ -44,7 +44,7 @@ export default function ProjectCard({
             src={imgUrl}
             alt={name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover"
           />
 
           {type && (

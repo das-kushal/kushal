@@ -48,9 +48,9 @@ export default function Home() {
 
         <Link
           href="#top"
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gradient-to-br from-primary-600 to-primary-500 text-white shadow-xl shadow-primary-600/30 hover:shadow-primary-500/50 hover:scale-110 transition-all duration-300 border border-primary-400/30 group"
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gradient-to-br from-primary-600 to-primary-500 text-white transition-all duration-300 border border-primary-400/30 group"
         >
-          <ChevronUp size={22} className="group-hover:-translate-y-0.5 transition-transform" />
+          <ChevronUp size={22} />
         </Link>
       </div>
     </main>
